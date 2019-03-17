@@ -1,0 +1,25 @@
+{
+  "name": "solar-scheduler",
+  "version": "1.0.0",
+  "description": "Scheduler that can run local commands with sunrise/sunset awareness",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjfelton/solar-scheduler.git"
+  },
+  "author": "bjfelton@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjfelton/solar-scheduler/issues"
+  },
+  "homepage": "https://github.com/bjfelton/solar-scheduler#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-jest": "^4.0.2",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0"
+  }
+}
