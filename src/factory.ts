@@ -11,6 +11,8 @@ export class ScheduleFactory {
     switch (config.type) {
       case 'interval':
         return new Interval(config);
+      case 'simpleTimer':
+        return new SimpleTimer(config);
     }
   }
 }

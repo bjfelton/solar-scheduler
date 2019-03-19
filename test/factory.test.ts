@@ -5,10 +5,11 @@ import {SimpleTimer} from '../src/on-off';
 describe('factory', () => {
   [
     {type: 'interval', class: Interval},
-  ].forEach(tc => (
+    {type: 'simpleTimer', class: SimpleTimer},
+  ].forEach(tc => {
     test(`returns expected class for type ${tc.type}`, () => {
       const actual = ScheduleFactory.createSchedule({type: tc.type});
-      expect(actual).toBeInstanceOf(tc.class);
+      expect(actual).toBeInstanceOf(tc.class)
     });
-))
+  });
 });

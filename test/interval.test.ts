@@ -16,7 +16,7 @@ describe('interval tests', () => {
   });
 
   test('executes provided command on expected interval', () => {
-    const timer = faker.random.number();
+    const timer   = faker.random.number();
     const command = faker.lorem.words();
 
     const testObject = new Interval({intervalMs: timer, command: command});
