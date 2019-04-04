@@ -20,15 +20,12 @@ gulp.task('default', () => {
   gulp.watch(['src/**', 'test/**'], gulp.series('test'));
 });
 
-gulp.task('test', () => {
-  return gulp.src('.')
-    .pipe(jest({
-      rootDir: './',
-      testDirectoryName: 'test',
-      preprocessorIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/']
-    }));
-});
+gulp.task('test', () => gulp.src('.')
+  .pipe(jest({
+    rootDir: './',
+    testDirectoryName: 'test',
+    preprocessorIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/']
+  }))
+);
 
-const commitready = gulp.series('securityScan', 'test');
-
-gulp.task('commitready', commitready);
+gulp.task('commitready', gulp.series('securityScan', 'test'));
