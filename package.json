@@ -2,7 +2,7 @@
   "name": "solar-scheduler",
   "version": "1.0.0",
   "description": "Scheduler that can run local commands with sunrise/sunset awareness",
-  "main": "src/app.js",
+  "main": "src/app.ts",
   "scripts": {
     "test": "gulp test"
   },
@@ -23,6 +23,7 @@
     "gulp-jest": "^4.0.2",
     "jest": "^24.5.0",
     "jest-cli": "^24.5.0",
+    "jest-date-mock": "^1.0.7",
     "ts-jest": "^24.0.0"
   },
   "dependencies": {
@@ -30,5 +31,8 @@
     "moment": "^2.24.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "setupFiles": ["jest-date-mock"]
   }
 }

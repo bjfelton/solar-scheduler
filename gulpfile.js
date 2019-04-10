@@ -20,12 +20,14 @@ gulp.task('default', () => {
   gulp.watch(['src/**', 'test/**'], gulp.series('test'));
 });
 
-gulp.task('test', () => gulp.src('.')
-  .pipe(jest({
-    rootDir: './',
-    testDirectoryName: 'test',
-    preprocessorIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/']
-  }))
-);
+gulp.task('test', () => {
+  process.env.TZ = 'UTC';
+  return gulp.src('.')
+    .pipe(jest({
+      rootDir: './',
+      testDirectoryName: 'test',
+      preprocessorIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/']
+    }));
+});
 
 gulp.task('commitready', gulp.series('securityScan', 'test'));
